@@ -1,4 +1,63 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-* {
-  font-family: 'Montserrat', sans-serif;
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+/* {
+   font-family: 'Montserrat', sans-serif;
+
+} */
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+hr.line {
+   margin: auto;
+   width: 70%;
+   border-top: 1px solid rgb(91, 91, 91);
+}
+.social-icons {
+   display: block;
+}
+.social-icons ul {
+   list-style: none;
+   display: flex;
+}
+.social-icons li {
+   margin: 7px;
+}
+
+.social-icons a {
+   font-size: 20px;
+   transition: 0.4s;
+   color: rgb(91, 91, 91);
+}
+.social-icons a:hover {
+   background: none;
+}
+
+.social-icons a i {
+   transition: 0.4s all;
+}
+
+.social-icons a:hover > i {
+   transform: scale(1.5) rotate(25deg);
+}
+
+#footer {
+   width: 100vw;
+   height: 60px;
+   background-color: rgb(247, 247, 247);
+   padding: 0 20px;
+   display: flex;
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   left: 0;
+}
+
+.footer-container {
+   width: 70vw;
+   margin: 5px auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.footer-container h4 {
+   font-size: 12px;
 }
