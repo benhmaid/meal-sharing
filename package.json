@@ -1,15 +1,15 @@
 {
   "name": "meal-sharing",
   "version": "1.0.0",
-  "description": "Website for sharing meals",
+  "description": "Meal sharing website",
   "engines": {
     "node": "8.11.1"
   },
   "scripts": {
-    "start": "npm run server",
+    "start": "node ./src/backend/index.js",
     "server": "nodemon ./src/backend/index.js"
   },
-  "author": "Benjamin Hughes",
+  "author": "Ghofrane Ben hmaid",
   "license": "MIT",
   "dependencies": {
     "@types/xml": "^1.0.3",
