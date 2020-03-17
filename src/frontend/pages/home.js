@@ -5,7 +5,6 @@ window.handleHomeRequest = () => {
 		<div class="logo">
 			<a href="/" data-navigo>
 				<h1>mealinfo
-					
 					<samp>:</samp>
 				</h1>
 			</a>
@@ -18,7 +17,9 @@ window.handleHomeRequest = () => {
 			</a>
 		</ul>
 	</div>
-</div>undefined</header>undefined<!-- Search form -->undefined<div class="section">
+</div>
+</header>
+<div class="section">
 <div>
 	<h1 class="txt-looking-meal"> Looking for a Meal
 	</1>
@@ -33,10 +34,10 @@ window.handleHomeRequest = () => {
 		<input class="active-cyan-2" id="input_meal" type="text"  name="fname" placeholder="Search">
 		</form>
 	</div>
-	<div class="meal-search"></div>
+	<div class="meal-search"><button id="the-important-button">Submit</button>​</div>
 </div>
 <div class= 'container'>
-	<h1> Home </h1>
+	
 	<div class="meal-container"></div>
 </div>
 <footer id="footer">
@@ -106,8 +107,7 @@ window.handleHomeRequest = () => {
                     		<img class="card-img-top" src="https://source.unsplash.com/400x260?${meal.title}" alt="${meal.title}" />
                     		<h5 class="card-title">${meal.title}</h5>
                     		<p class="card-text">${meal.description}</p>
-                    		<a href="meal/${meal.id}" class="btn btn-primary">Go</a>
-                    		<button type="button" class="btn btn-outline-danger">Delete</button>
+                    		<a href="meal/${meal.id}" class="btn btn-primary">Read More</a>
                     	</div>
                     </div> `;
                      if (mealSearch.style.display === 'none') {
@@ -128,8 +128,7 @@ window.handleHomeRequest = () => {
                             <img class="card-img-top" src="https://source.unsplash.com/400x260?${element.title}" alt="${element.title}" />
                             <h5 class="card-title">${element.title}</h5>
                             <p class="card-text">${element.description}</p>
-                            <a href="meal/${element.id}" class="btn btn-primary">Go</a>
-                            <button type="button" class="btn btn-outline-danger">Delete</button>
+                            <a href="meal/${element.id}" class="btn btn-primary">Read More</a>
                         </div>
                     </div>`;
                container.appendChild(div);
