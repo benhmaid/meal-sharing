@@ -1,4 +1,3 @@
-//import { response } from 'express';
 
 window.handleMealRequest = (params) => {
    fetch(`/api/meals/${params.id}`)
@@ -63,8 +62,11 @@ window.handleMealRequest = (params) => {
 					<div class="col">
 						<input type="text" class="form-control" name="phone" value="" placeholder="Phone">
 						</div>
-						<button type="submit" class="btn btn-primary">Sign in</button>
+						<button type="submit" class="btn btn-primary">CONFIRM</button>
 					</div>
+					<div class="resSucces reservationMessage"> </div>
+					<div class="resError reservationMessage"> </div>
+					
 				</form>
 			</div>
 			<footer id="footer">
@@ -126,18 +128,31 @@ window.handleMealRequest = (params) => {
                meal_id: params.id
             };
             console.log(insertData);
-
-            fetch('/api/reservations', {
-               method: 'POST',
-               headers: { 'Content-Type': 'application/json' },
-               body: JSON.stringify(insertData)
-            })
-               .then((response) => {
-                  response.json();
+            const message = document.querySelector('.resSucces');
+            const message2 = document.querySelector('.resError');
+            if (
+               nameInput.value !== '' &&
+               phoneInput.value !== '' &&
+               emailInput.value !== ''
+            ) {
+               fetch('/api/reservations', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(insertData)
                })
-               .then((reservations) => {
-                  console.log(reservations);
-               });
+                  .then((response) => {
+                     response.json();
+                  })
+                  .then((data) => {
+                     message.innerHTML = `Thank you ${nameInput.value}. Your ordered is now succesfully placed.  `;
+                  });
+            } else if (
+               nameInput.value == '' ||
+               phoneInput.value == '' ||
+               emailInput.value == ''
+            ) {
+               message2.innerHTML = `Please, fill correctly the form.`;
+            }
          });
       });
 
