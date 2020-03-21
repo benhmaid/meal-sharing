@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 // * Add a new review
 router.post('/', (req, res) => {
    const review = req.body;
-   pool.query('insert into reviews set ?', review, (err, results, fields) => {
+   pool.query('insert into review set ?', review, (err, results, fields) => {
       if (err) {
          console.error(err);
       } else {
@@ -38,6 +38,24 @@ router.get('/:id', (req, res) => {
             res.send('There is no such an id');
          } else {
             res.send(results);
+         }
+      }
+   );
+});
+
+router.delete('/:id', (req, res) => {
+   const id = req.params.id;
+   pool.query(
+      'delete from review where id = ?;',
+      id,
+      (err, results, fields) => {
+         if (err) {
+            console.error(err);
+         } else if (results.length < 1) {
+            res.send('There is no such an id.');
+         } else {
+            console.log(fields);
+            res.send('review has been deleted successfully.');
          }
       }
    );

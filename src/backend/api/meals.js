@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
 });
 
 // ? Post new meal
-router.post('/add-meal', (req, res) => {
+router.post('/', (req, res) => {
    const meal = req.body;
    pool.query('insert into meal set ?;', meal, (err, result, query) => {
       if (err) {

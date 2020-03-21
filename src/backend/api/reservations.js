@@ -81,11 +81,10 @@ router.delete('/:id', (req, res) => {
          if (err) {
             console.error(err);
          } else if (results.length < 1) {
-            console.log(results);
             res.send('There is no such an id.');
          } else {
             console.log(fields);
-            res.send('Review has been deleted successfully.');
+            res.send('reservation has been deleted successfully.');
          }
       }
    );

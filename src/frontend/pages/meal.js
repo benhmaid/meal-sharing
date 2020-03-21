@@ -1,4 +1,3 @@
-
 window.handleMealRequest = (params) => {
    fetch(`/api/meals/${params.id}`)
       .then((res) => res.json())
@@ -17,22 +16,22 @@ window.handleMealRequest = (params) => {
 			<ul>
 				<a href="/" data-navigo>Home</a>
 				<a href="meals" data-navigo>Meals</a>
-				
 			</ul>
 		</div>
 	</div>
 </header>
-<div class='container'>
-<div class=" col-sm-9" id="meal-info">
+<div class='container' style="height:100%">
+<div class=" col-lg-12">
 <div class="row">
 <div class="col">
-<h1> ${data[0].title}</h1>
+<h1 class="display-1"> ${data[0].title}</h1>
 </div>
 		<div class="row">
-				<div class="col">
+				<div class="col-lg-5">
 					<img src="https://source.unsplash.com/450x300?${data[0].title}" alt="${data[0].title}" />
 				</div>
-				<div class="col meal-desciption">
+				<div class="col-lg-4 meal-desciption">
+				    <h2>ABOUT THIS MEAL</h2>
 					<p>
 						<span></span>${data[0].description}
 					</p>
@@ -50,24 +49,83 @@ window.handleMealRequest = (params) => {
 			</div>
 		</div>
 	</div>
-	<form class="booking" id="reservationsForm" >
-	<h1 class="pb-3 reservationTitle">Place an order for a ${data[0].title} meal </h1>
+
+	<div id="accordion" class="col p-4 mt-12" >
+  
+  <div class="card">
+    <div class="card-header">
+      <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+        <h4 class="reservationTitle">Add a review for ${data[0].title} meals </h4>
+      </a>
+    </div>
+    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+	   <form id="newMeal" class="reviewsForm text-center border border-light p-2 " action="#!" >
+    <p class="h2 mb-4">Add a meal</p>
+    <!-- Title -->
+    <div class="form-row mb-4">
+	<div class="col">
+		<!-- Last name -->
+		<input type="text" name="name" id="defaultRegisterFormName" class="form-control" placeholder="Name">
+	</div>
+        <div class="col">
+            <!-- Stars -->
+            <input type="text" name="stars" id="defaultRegisterFormStars" class="form-control" placeholder="Stars">
+        </div>
+    </div>
+    <!-- Description -->
+       <div class="form-group mt-4">
+                <label for="quickReplyFormComment">Your comment</label>
+                <textarea class="form-control comment" name="comment" id="quickReplyFormComment" rows="5"></textarea>
+
+                <div class="text-center my-4">
+                  <button class="btn btn-info btn-lg" type="submit">Post</button>
+                </div>
+              </div>
+
+    <p class="resSucces"></p>
+    <p class="resError"></p>
+
+</form>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+       <h4 class="reservationTitle">Place an order for a ${data[0].title} meal </h4>
+      </a>
+	</div>
+    <div id="collapseThree" class="collapse" data-parent="#accordion">
+	  <div class="card-body">
+	  
+		<form class="reservationsForm">
 		<div class="form-row">
 			<div class="col">
-				<input type="text" class="form-control" name="name" value="" placeholder="Name">
+				<input type="text" class="form-control" name="name" placeholder="Name">
 				</div>
 				<div class="col">
-					<input type="email" class="form-control" name="email" value="" id="inputEmail3" placeholder="Email">
+					<input type="email" class="form-control" name="email" id="inputEmail3" placeholder="Email">
 					</div>
 					<div class="col">
-						<input type="text" class="form-control" name="phone" value="" placeholder="Phone">
+						<input type="text" class="form-control" name="phone" placeholder="Phone">
 						</div>
 						<button type="submit" class="btn btn-primary">CONFIRM</button>
 					</div>
+					
 					<div class="resSucces reservationMessage"> </div>
 					<div class="resError reservationMessage"> </div>
 					
 				</form>
+		
+	
+      </div>
+    </div>
+  </div>
+
+</div>
+	
 			</div>
 			<footer id="footer">
 		<div class="footer-container">
@@ -113,9 +171,9 @@ window.handleMealRequest = (params) => {
 	</footer> 
 		 `;
 
-         const form = document.querySelector('.booking');
+         const reservationsForm = document.querySelector('.reservationsForm');
 
-         form.addEventListener('submit', (e) => {
+         reservationsForm.addEventListener('submit', (e) => {
             e.preventDefault();
             let form = e.target;
             let nameInput = form.elements.name;
@@ -150,6 +208,48 @@ window.handleMealRequest = (params) => {
                nameInput.value == '' ||
                phoneInput.value == '' ||
                emailInput.value == ''
+            ) {
+               message2.innerHTML = `Please, fill correctly the form.`;
+            }
+         });
+
+         const reviewsForm = document.querySelector('.reviewsForm');
+
+         reviewsForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let form = e.target;
+            let nameInput = form.elements.name;
+            let starsInput = form.elements.stars;
+            let commentInput = form.elements.comment;
+            let insertData = {
+               name: nameInput.value,
+               stars: starsInput.value,
+               description: commentInput.value,
+               meal_id: params.id
+            };
+            console.log(insertData);
+            const message = document.querySelector('.resSucces');
+            const message2 = document.querySelector('.resError');
+            if (
+               nameInput.value !== '' &&
+               starsInput.value !== '' &&
+               commentInput.value !== ''
+            ) {
+               fetch('/api/reviews', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(insertData)
+               })
+                  .then((response) => {
+                     response.json();
+                  })
+                  .then((data) => {
+                     message.innerHTML = `Thank you ${nameInput.value}. Your ordered is now succesfully placed.  `;
+                  });
+            } else if (
+               nameInput.value == '' ||
+               starsInput.value == '' ||
+               commentInput.value == ''
             ) {
                message2.innerHTML = `Please, fill correctly the form.`;
             }

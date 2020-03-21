@@ -14,10 +14,9 @@ window.handleMealsRequest = () => {
         </div>
     </div>
 </header>
-<div class='container'>
-    <h1>Meals</h1>
-    <div class="meal-container">
-    </div>
+<div class="container col-lg-8">
+    <div class="meal-container"></div>
+    
     </div>
         <footer id="footer">
             <div class="footer-container">
@@ -70,7 +69,7 @@ window.handleMealsRequest = () => {
          .then((data) => {
             data.forEach((element) => {
                const div = document.createElement('div');
-               div.innerHTML = `<div class="card" style="width: 18rem;">
+               div.innerHTML = `<div class="card" style="width: 20rem;">
                <div class="card-body">
                
                <img class="card-img-top"
@@ -78,10 +77,11 @@ window.handleMealsRequest = () => {
                             alt="${element.title}" />
                  <h5 class="card-title">${element.title}</h5>
                    <p class="card-text">${element.description}</p>
-                   <a href="meal/${element.id}" class="btn btn-primary">Go</a>
-                   <button type="button" class="btn btn-outline-danger">Delete</button>
+                   <a href="meal/${element.id}" class="btn btn-light-blue">Read more</a>
                </div>
-               </div>`;
+               </div>
+               
+               `;
                container.appendChild(div);
             });
          });
