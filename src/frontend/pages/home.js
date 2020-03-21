@@ -1,27 +1,26 @@
 window.handleHomeRequest = () => {
    document.body.innerHTML = `
-   <header>
-   <div class="menu">
-      <div class="logo">
-         <a href="meals" data-navigo>
-            <h1>mealinfo
+ <header>
+	<div class="menu">
+		<div class="logo">
+			<a href="meals" data-navigo>
+				<h1>mealinfo
                <samp>:</samp>
             </h1>
-         </a>
-      </div>
-      <div>
-         <ul>
-            <a href="/" data-navigo>Home</a>
-            <a href="meals" data-navigo>Meals</a>
-            <button type="button" class="btn btn-outline">See All Meals</button>
-            </a>
-         </ul>
-      </div>
-   </div>
+			</a>
+		</div>
+		<div>
+			<ul> <a href="/" data-navigo>Home</a>
+				<a href="meals" data-navigo>Meals</a>
+				<button type="button" class="btn btn-outline">See All Meals</button>
+				</a>
+			</ul>
+		</div>
+	</div>
 </header>
 <div class=" bg-info p-5 z-depth-1-half  section justify-content-center">
-   <div>
-      <h1 class="display-1 txt-looking-meal mb-4">
+	<div>
+		<h1 class="display-1 txt-looking-meal mb-4">
       Looking for a Meal
       </1>
    </div>
@@ -54,59 +53,47 @@ window.handleHomeRequest = () => {
    <div class="container col-3 justify-content-center">
    <div class="text-center"> 
    <h1 class="display-4 mb-4">Hungry yet? </h1>
-   <p>See something you like? Have an idea for an amazing meal of your own, or even something chill and casual?
-
-</p> </div>
-	  <div class="row justify-content-center ">
-         <div class="px-2">
-            <a href="/meals/new" class="shadow-sm px-4 p-2 btn btn-outline-info waves-effect" role="button" aria-pressed="true">Create a Meal</a>
-         </div>
-         <div class="px-2">
-            <a  href="meals" data-navigo class="shadow-sm px-4 p-2 btn btn-outline-success waves-effect" role="button" aria-pressed="true">See All Meals</a>
-         </div>
-      </div>
-   </div>
-</div>
-
-<div class="row mt-4 mx-auto col-8 justify-content-center"><h1> Reviews </h1></div>
-<div class="d-flex slider_review">
-
-
+		<p>See something you like? Have an idea for an amazing meal of your own, or even something chill and casual?</p>
+	</div>
+	<div class="row justify-content-center ">
+		<div class="px-2"> <a href="/meals/new" class="shadow-sm px-4 p-2 btn btn-outline-info waves-effect" role="button" aria-pressed="true">Create a Meal</a>
+		</div>
+		<div class="px-2"> <a href="meals" data-navigo class="shadow-sm px-4 p-2 btn btn-outline-success waves-effect" role="button" aria-pressed="true">See All Meals</a>
+		</div>
+	</div>
 </div>
 </div>
-
+<div class="row mt-4 mx-auto col-8 justify-content-center">
+	<h1> Reviews </h1>
+</div>
+<div class="d-flex slider_review"></div>
+</div>
 <footer id="footer">
 	<div class="footer-container">
 		<div class="social-icons">
 			<ul>
 				<li>
-					<a href="https://www.facebook.com/ghofranebh90" class="social-icon">
-						<i class="fa fa-facebook"></i>
+					<a href="https://www.facebook.com/ghofranebh90" class="social-icon">	<i class="fa fa-facebook"></i>
 					</a>
 				</li>
 				<li>
-					<a href="" class="social-icon">
-						<i class="fa fa-instagram"></i>
+					<a href="" class="social-icon">	<i class="fa fa-instagram"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://www.behance.net/Ghofranebh" class="social-icon">
-						<i class="fa fa-behance"></i>
+					<a href="https://www.behance.net/Ghofranebh" class="social-icon">	<i class="fa fa-behance"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://www.linkedin.com/in/ghofranebenhmaid/" class="social-icon">
-						<i class="fa fa-linkedin"></i>
+					<a href="https://www.linkedin.com/in/ghofranebenhmaid/" class="social-icon">	<i class="fa fa-linkedin"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://dribbble.com/Ghofrane" class="social-icon">
-						<i class="fa fa-dribbble"></i>
+					<a href="https://dribbble.com/Ghofrane" class="social-icon">	<i class="fa fa-dribbble"></i>
 					</a>
 				</li>
 				<li>
-					<a href="https://github.com/benhmaid" class="social-icon">
-						<i class="fa fa-github"></i>
+					<a href="https://github.com/benhmaid" class="social-icon">	<i class="fa fa-github"></i>
 					</a>
 				</li>
 			</ul>
@@ -161,16 +148,14 @@ window.handleHomeRequest = () => {
             data.forEach((element) => {
                const carouselItem = document.querySelector('.glider-track');
                const div = document.createElement('figure');
-               div.innerHTML = `
-                <div class="card" style="width: 20rem;">
-             	<div class="card-body">
-             	<img class="card-img-top" src="https://source.unsplash.com/400x260?${element.title}" alt="${element.title}" />
-             	<h5 class="card-title">${element.title}</h5>
-             	<p class="card-text">${element.description}</p>
-             	<a href="meal/${element.id}" class="btn btn-primary">Read More</a>
-             	</div>
-                </div>
-             `;
+               div.innerHTML = ` <div class="card" style="width: 20rem;">
+             	                    <div class="card-body">
+             	                    <img class="card-img-top" src="https://source.unsplash.com/400x260?${element.title}" alt="${element.title}" />
+             	                    <h5 class="card-title">${element.title}</h5>
+             	                    <p class="card-text">${element.description}</p>
+             	                    <a href="meal/${element.id}" class="btn btn-primary">Read More</a>
+             	                    </div>
+                                  </div>`;
                carouselItem.appendChild(div);
             });
          });
@@ -187,32 +172,18 @@ window.handleHomeRequest = () => {
 
             data.forEach((element) => {
                const div = document.createElement('div');
-               div.innerHTML = `
-                 
-               
-                <div class="reviewsCart px-3  m-2">
-
-        <div class="row d-flex align-items-center">
-          <div
-            class="col-4 avatar w-100 white d-flex justify-content-center align-items-center"
-          >
-            <img
-              src="https://source.unsplash.com/260x260?${element.stars}"
-              class="img-fluid rounded-circle z-depth-1"
-            />
-          </div>
-          <div class="col-8">
-            <h6 class="font-weight-bold pt-2">${element.name}</h6>
-            <p class="text-muted">
-   
-            </p>
-            <p class="text-muted">
-             ${element.description}</p>
-          </div>
-
-        </div>
-      </div>
-                `;
+               div.innerHTML = `<div class="reviewsCart px-3  m-2">
+                                	<div class="row d-flex align-items-center">
+                                		<div class="col-4 avatar w-100 white d-flex justify-content-center align-items-center">
+                                			<img src="https://source.unsplash.com/260x260?${element.stars}" class="img-fluid rounded-circle z-depth-1" />
+                                		</div>
+                                		<div class="col-8">
+                                			<h6 class="font-weight-bold pt-2">${element.name}</h6>
+                                			<p class="text-muted"></p>
+                                			<p class="text-muted">${element.description}</p>
+                                		</div>
+                                	</div>
+                                </div> `;
                carouselReviews.appendChild(div);
             });
          });
