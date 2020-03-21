@@ -230,7 +230,7 @@ window.handleMealRequest = (params) => {
                      response.json();
                   })
                   .then((data) => {
-                     message.innerHTML = `Thank you ${nameInput.value}. Your ordered is now succesfully placed.  `;
+                     message.innerHTML = `Thank you ${nameInput.value}. Your review is now succesfully added.  `;
                   });
             } else if (
                nameInput.value == '' ||
