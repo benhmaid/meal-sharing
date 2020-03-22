@@ -1,73 +1,144 @@
 window.handleHomeRequest = () => {
    document.body.innerHTML = `
  <header>
-	<div class="menu">
-		<div class="logo">
-			<a href="meals" data-navigo>
-				<h1>mealinfo
+    <div class="menu">
+        <div class="logo">
+            <a href="meals" data-navigo>
+                <h1>mealinfo
                <samp>:</samp>
             </h1>
-			</a>
-		</div>
-		<div>
-			<ul> <a href="/" data-navigo>Home</a>
-				<a href="meals" data-navigo>Meals</a>
-				<button type="button" class="btn btn-outline">See All Meals</button>
-				</a>
-			</ul>
-		</div>
-	</div>
+            </a>
+        </div>
+        <div>
+            <ul> <a href="/" data-navigo>Home</a>
+                <a href="meals" data-navigo>Meals</a>
+                <button type="button" class="btn btn-outline">See All Meals</button>
+                </a>
+            </ul>
+        </div>
+    </div>
 </header>
-<div class=" bg-info p-5 z-depth-1-half  section justify-content-center">
-	<div>
-		<h1 class="display-1 txt-looking-meal mb-4">
-      Looking for a Meal
-      </1>
-   </div>
-   <div>
-      <a href="meals" data-navigo>
-      <button type="button" class="btn btn-outline">See All Meals</button>
-      </a>
-   </div>
-   <div>
-      <form class="search-form">
-         <input class="active-cyan-2" id="input_meal" type="text"  name="fname" placeholder="Search">
-      </form>
-   </div>
-   <div class="meal-search"><button id="the-important-button">Submit</button>​</div>
+<div style="background: #002065" class="jumbotron bg-cover text-white ">
+    <div class="container py-5 text-center ">
+        <h1 class="display-4 font-weight-bold">Looking for a Meal</h1>
+
+        <a href="meals" role="button" class="btn btn-primary m-3 px-5">See All Meals</a>
+
+        <form action="" class="search-form py-4 m-auto col-lg-6">
+            <div class="p-2 bg-light rounded rounded-pill shadow-sm mb-4">
+                <div class="input-group">
+                    <input type="search" id="input_meal" placeholder="What're you searching for?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                    <div class="input-group-append">
+                        <button id="button-addon1" class="meal-search" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
 </div>
-<div class="slider_meal p-4">
-   <div class="glider-contain multiple">
-      <button class="glider-prev">
-      <i class="fa fa-chevron-left"></i>
-      </button>
-      <div class="glider">
-      </div>
-      <button class="glider-next">
-      <i class="fa fa-chevron-right"></i>
-      </button>
-      <div id="dots" class="glider-dots"></div>
-   </div>
+
+<div class="slider_meal  p-4 ">
+    <div class="glider-contain multiple">
+        <button class="glider-prev">
+            <i class="fa fa-chevron-left"></i>
+        </button>
+        <div class="glider">
+        </div>
+        <button class="glider-next">
+            <i class="fa fa-chevron-right"></i>
+        </button>
+        <div id="dots" class="glider-dots"></div>
+    </div>
 </div>
 <div class="section_add_meal">
-   <div class="container col-3 justify-content-center">
-   <div class="text-center"> 
-   <h1 class="display-4 mb-4">Hungry yet? </h1>
-		<p>See something you like? Have an idea for an amazing meal of your own, or even something chill and casual?</p>
-	</div>
-	<div class="row justify-content-center ">
-		<div class="px-2"> <a href="/meals/new" class="shadow-sm px-4 p-2 btn btn-outline-info waves-effect" role="button" aria-pressed="true">Create a Meal</a>
-		</div>
-		<div class="px-2"> <a href="meals" data-navigo class="shadow-sm px-4 p-2 btn btn-outline-success waves-effect" role="button" aria-pressed="true">See All Meals</a>
-		</div>
-	</div>
-</div>
+    <div class="container col-lg-4 justify-content-center">
+        <div class="text-center">
+            <h1 class="display-4 mb-4">Hungry yet? </h1>
+            <p>See something you like? Have an idea for an amazing meal of your own, or even something chill and casual?</p>
+        </div>
+        <div class="row justify-content-center ">
+            <div class="px-2"> <a href="/meals/new" class="shadow-sm px-4 p-2 btn btn-outline-info waves-effect" role="button" aria-pressed="true">Create a Meal</a>
+            </div>
+            <div class="px-2"> <a href="meals" data-navigo class="shadow-sm px-4 p-2 btn btn-outline-success waves-effect" role="button" aria-pressed="true">See All Meals</a>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="row mt-4 mx-auto col-8 justify-content-center">
-	<h1> Reviews </h1>
+    <h1> Reviews </h1>
 </div>
-<div class="d-flex slider_review"></div>
-</div>
+
+<section class="pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8 mx-auto">
+                <div class="p-5 bg-white shadow rounded ">
+                    <!-- Bootstrap carousel-->
+                    <div class="carousel slide" id="carouselExampleIndicators" data-ride="carousel">
+                        <!-- Bootstrap carousel indicators [nav] -->
+
+                        <!-- Bootstrap inner [slides]-->
+                        <div class="carousel-inner px-5 pb-4">
+                            <!-- Carousel slide-->
+                            <div class="carousel-item active">
+                                <div class="media"><img class="rounded-circle img-thumbnail" src="https://res.cloudinary.com/mhmd/image/upload/v1579676165/avatar-1_ffutqr.jpg" alt="" width="75">
+                                    <div class="media-body ml-3">
+                                        <blockquote class="blockquote border-0 p-0">
+                                            <p class="font-italic lead"> <i class="fa fa-quote-left mr-3 text-success"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <footer class="blockquote-footer">Someone famous in
+                                                <cite title="Source Title">Source Title</cite>
+                                            </footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Carousel slide-->
+                            <div class="carousel-item">
+                                <div class="media"><img class="rounded-circle img-thumbnail" src="https://res.cloudinary.com/mhmd/image/upload/v1579676165/avatar-3_hdxocq.jpg" alt="" width="75">
+                                    <div class="media-body ml-3">
+                                        <blockquote class="blockquote border-0 p-0">
+                                            <p class="font-italic lead"> <i class="fa fa-quote-left mr-3 text-success"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <footer class="blockquote-footer">Someone famous in
+                                                <cite title="Source Title">Source Title</cite>
+                                            </footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Carousel slide-->
+                            <div class="carousel-item">
+                                <div class="media"><img class="rounded-circle img-thumbnail" src="https://res.cloudinary.com/mhmd/image/upload/v1579676165/avatar-2_gibm2s.jpg" alt="" width="75">
+                                    <div class="media-body ml-3">
+                                        <blockquote class="blockquote border-0 p-0">
+                                            <p class="font-italic lead"> <i class="fa fa-quote-left mr-3 text-success"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <footer class="blockquote-footer">Someone famous in
+                                                <cite title="Source Title">Source Title</cite>
+                                            </footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bootstrap controls [dots]-->
+                        <a class="carousel-control-prev width-auto" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <i class="fa fa-angle-left text-dark text-lg"></i>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next width-auto" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <i class="fa fa-angle-right text-dark text-lg"></i>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <footer id="footer">
 	<div class="footer-container">
 		<div class="social-icons">
@@ -165,29 +236,30 @@ window.handleHomeRequest = () => {
       fetch('/api/reviews')
          .then((res) => res.json())
          .then((data) => {
-            console.log(data);
-
-            const carouselReviews = document.querySelector('.slider_review');
-            // const carouselReviews = document.querySelector('.slider_review');
+            const carouselReviews = document.querySelector('.carousel-inner');
 
             data.forEach((element) => {
-               const div = document.createElement('div');
-               div.innerHTML = `<div class="reviewsCart px-3  m-2">
-                                	<div class="row d-flex align-items-center">
-                                		<div class="col-4 avatar w-100 white d-flex justify-content-center align-items-center">
-                                			<img src="https://source.unsplash.com/260x260?${element.stars}" class="img-fluid rounded-circle z-depth-1" />
-                                		</div>
-                                		<div class="col-8">
-                                			<h6 class="font-weight-bold pt-2">${element.name}</h6>
-                                			<p class="text-muted"></p>
-                                			<p class="text-muted">${element.description}</p>
-                                		</div>
-                                	</div>
-                                </div> `;
-               carouselReviews.appendChild(div);
+               // const div = document.createElement('figure');
+               const carouselRev = document.querySelector('.carousel-item');
+               carouselRev.innerHTML = `  
+               <div class="media"><img class="rounded-circle img-thumbnail" src="https://source.unsplash.com/400x400?${element.id}" alt="" width="75">
+               <div class="media-body ml-3">
+               <div><h4>${element.name}</h4></div>
+                                        <blockquote class="blockquote border-0 p-0">
+                                            <p class="font-italic lead"> <i class="fa fa-quote-left mr-3 text-success"></i>${element.description}</p>
+                                            <footer class="blockquote-footer">Someone famous in
+                                                <cite title="Source Title"> ${element.name}</cite>
+                                            </footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            
+                        
+                                `;
+               carouselReviews.appendChild(carouselRev);
             });
          });
-      // carouselReviews.innerHTML = '';
+      //carouselReviews.innerHTML = '';
    }
 
    loadMeals();
