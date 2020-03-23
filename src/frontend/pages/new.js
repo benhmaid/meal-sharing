@@ -1,7 +1,7 @@
 window.handleNewMealRequest = (params) => {
-      fetch(`/api/meals/${params.id}`)
-          .then((res) => res.json())
-          .then((data) => {
+      //fetch(`/api/meals/${params.id}`)
+        //  .then((res) => res.json())
+          //.then((data) => {
    document.body.innerHTML = `
 <header>
 	<div class="menu">
