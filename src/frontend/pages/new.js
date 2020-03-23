@@ -1,7 +1,7 @@
 window.handleNewMealRequest = (params) => {
-   //    fetch(`/api/meals/${params.id}`)
-   //       .then((res) => res.json())
-   //       .then((data) => {
+      fetch(`/api/meals/${params.id}`)
+          .then((res) => res.json())
+          .then((data) => {
    document.body.innerHTML = `
 <header>
 	<div class="menu">
@@ -114,7 +114,7 @@ window.handleNewMealRequest = (params) => {
                response.json();
             })
             .then((data) => {
-               message.innerHTML = `Thank you . Your ordered is now succesfully placed.  `;
+               message.innerHTML = `Thank you . Your meal is now succesfully placed.  `;
             });
       } else if (
          titleInput.value == '' ||
