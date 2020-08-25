@@ -52,6 +52,10 @@ header a:hover {
    text-decoration: none;
    color: rgb(56, 250, 218);
 }
+.big-banner {
+   background: url('./cover.jpg') center center;
+   background-size: cover;
+}
 
 .meal-container {
    /* width: 70vw; */
